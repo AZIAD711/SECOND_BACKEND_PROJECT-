@@ -12,13 +12,14 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    @PostMapping("add/users")
+    @PostMapping("/add/users")
     public UserDto addUser(@RequestBody UserDto userDto){
         return userService.add(userDto);
     }
-    @GetMapping("get/users")
+    @GetMapping("/get/users")
     public List<UserEntity> findAll(){
         return userService.findAll();
     }
 
 }
+
